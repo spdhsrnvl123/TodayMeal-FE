@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="rankTopBox" *ngIf="!voteStatus">
-          <app-rank-top [voteData]="voteData" />
+          <app-rank-top [voteData]="voteData" (page)="pageStatusHandler($event)" />
         </div>
       </div>
       <div class="section002">

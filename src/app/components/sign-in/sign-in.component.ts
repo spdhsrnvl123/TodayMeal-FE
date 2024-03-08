@@ -26,6 +26,8 @@ export class SignInComponent {
       formData.append('user_id', singData.user_id);
       formData.append('password', singData.password);
 
+      // formData.append('user_id', 'dlxogud');
+      // formData.append('password', 'flanfm12!!');
       // FormData를 API 서비스로 전달
       this.apiService.loginReq(formData).subscribe((response: any) => {
         if (response) {

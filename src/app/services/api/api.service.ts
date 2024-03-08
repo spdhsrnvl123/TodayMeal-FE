@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiService {
+  // private api: String = '/api';
   private api: String = 'http://localhost:8000';
   private headerOption = {};
 
@@ -58,8 +59,7 @@ export class ApiService {
   loginReq(userData: any) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':
-          'multipart/form-data; boundary=<calculated when request is sent>',
+        'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
         Authorization: 'my-auth-token',
       }),
     };

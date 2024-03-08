@@ -26,6 +26,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   myVoteStatus: any; //투표 유무
 
   voteData : any = []; //투표한 장소, 회원 정보 데이터
+  pageStatus : any;
 
   //초기 등록된 장소 조회
   ngOnInit() {
@@ -58,6 +59,10 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     this.apiService.voteUserData(sessionStorage.getItem('userId')).subscribe((data: any) => {
       this.myVoteLocationData = data;
     });
+  }
+
+  pageStatusHandler(status : any){
+    this.pageStatus = status;
   }
 
   //투표한 장소, 회원 정보 가져오기
@@ -156,7 +161,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     this.date = `${year}.${month}.${date}`;
 
     // @ts-ignore
-    if (hours >= 9 && hours < 22) {
+    if (hours >= 9 && hours < 11) {
       this.voteStatus = true;
     } else {
       this.voteStatus = false;

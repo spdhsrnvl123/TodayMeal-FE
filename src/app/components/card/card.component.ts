@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 export class CardComponent implements OnInit {
   @Input() show: boolean | undefined; // 투표진행 유무 and 등록페이지 유무
   @Input() data: any = []; //메인컴포넌트에서 데이터를 받아옴
+  // @Input() voteTerminal: any //메인컴포넌트에서 데이터를 받아옴
   @Input() pageStatus:any //등록또는 투표종료에 따른 삭제버튼 활성화 값
   @Output() delItemId = new EventEmitter<string>();
   @Output() id = new EventEmitter<string>();
@@ -24,6 +25,7 @@ export class CardComponent implements OnInit {
   voteItemId : any; //각 장소에서 투표버튼을 누른 장소에 따라서 현재 일치하는 id값에 따라서 버튼상태를 다르게 보여주기 위한 값
 
   ngOnInit() {
+    // console.log(this.voteTerminal)
   }
 
   //부모컴포넌트에게 삭제 id값 넘겨주는 메소드

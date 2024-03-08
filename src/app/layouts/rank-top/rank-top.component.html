@@ -1,12 +1,14 @@
-<div class="subTitleBox">
-  <app-sub-title>
-    <h2>금일 투표 1위</h2>
-  </app-sub-title>
-</div>
-<div class="rankResultBox">
-  <img class="topImg" [src]="highestVoteItem.img" alt="foodRainOne"/>
-  <div class="description">
-    <h2>{{highestVoteItem.title}}</h2>
-    <p>투표수 : {{highestVoteItem.vote_count}}</p>
+<div  *ngIf="voteData.length > 0">
+  <div class="subTitleBox">
+    <app-sub-title>
+      <h2>금일 투표 1위</h2>
+    </app-sub-title>
+  </div>
+  <div class="rankResultBox">
+      <img class="topImg" [src]="highestVoteItem?.img" alt="foodRainOne"/>
+    <div class="description">
+      <h2>{{highestVoteItem?.title}}</h2>
+      <p>투표수 : {{highestVoteItem?.vote_count}}</p>
+    </div>
   </div>
 </div>
